@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: blueviolet;
+    filter: blur(1px);
+
+
+}
+body:hover{
+    background-color: red;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(8, 8, 8);
+
+}
+
+.container:hover{
+    color: yellow;
+}
+
+.container input{
+    display: none;
+}
+.container i{
+    font-size: 100px;
+    
+}
+.container .fa-regular{
+    position: absolute;
+    animation: keyframe-fill 0.5s;
+}
+.container .fa-solid{
+    position: absolute;
+    display: none;
+    animation: keyframe-fill 0.5s;
+}
+.container input:checked ~ .fa-regular{
+    display: none;
+}
+.container input:checked ~ .fa-solid{
+    display: block;
+}
+@keyframes keyframe-fill {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        transform: rotate(25deg);
+    }
+    50%{
+        transform: rotate(-200deg) scale(1.2);
+    }
+    75%{
+        transform: rotate(15deg);
+    }
+}
+
